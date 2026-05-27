@@ -392,6 +392,15 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Bulk Import prominent button */}
+        <button
+          onClick={() => setIsBulkOpen(true)}
+          className="w-full py-2.5 rounded-xl border border-dashed border-emerald-500/40 bg-emerald-50/5 hover:bg-emerald-50/10 text-emerald-600 dark:text-emerald-400 font-bold text-xs flex items-center justify-center gap-1.5 cursor-pointer transition-colors shadow-xs"
+        >
+          <Upload className="w-4 h-4 shrink-0" />
+          বাল্ক নাম ইম্পোর্ট করুন (JSON)
+        </button>
+
         {/* Search Bar */}
         <section className="relative">
           <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
