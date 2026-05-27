@@ -10,16 +10,12 @@ interface BulkImportModalProps {
 const sampleJson = `[
   {
     "name": "মোঃ আব্দুর রহমান",
-    "tokenNumber": "Q-011",
     "phone": "01711223344",
     "address": "দক্ষিণ পাড়া",
     "notes": "বিশেষ সাহায্য প্রয়োজন"
   },
   {
-    "name": "মোসাঃ ফাতেমা বেগম",
-    "tokenNumber": "Q-012",
-    "phone": "01822334455",
-    "address": "উত্তর পাড়া"
+    "name": "মোসাঃ ফাতেমা বেগম"
   }
 ]`;
 
