@@ -48,8 +48,8 @@ export default function PinScreen({ onSuccess }: PinScreenProps) {
         
         {/* Lock Screen Header */}
         <div className="flex flex-col items-center text-center gap-2">
-          <div className="p-4 rounded-full bg-emerald-50 dark:bg-emerald-950/20 text-primary border border-emerald-500/20 shadow-lg shadow-emerald-500/5 mb-1">
-            <Lock className="w-7 h-7 text-primary" />
+          <div className="w-18 h-18 rounded-2xl overflow-hidden shadow-md border border-emerald-500/20 mb-2 p-1 bg-card shrink-0">
+            <img src="/logo.png" alt="Logo" className="w-full h-full object-cover rounded-xl" />
           </div>
           <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white">গোশত বিতরণ ট্র্যাকার</h2>
           <p className="text-xs text-slate-500 max-w-xs leading-normal">

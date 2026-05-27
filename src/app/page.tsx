@@ -9,7 +9,6 @@ import {
   Clock, 
   Flame,
   UserCheck,
-  LayoutDashboard,
   Heart,
   X,
   Sun,
@@ -314,8 +313,8 @@ export default function Home() {
       <header className="sticky top-0 z-40 glass-header px-4 py-4.5 transition-all">
         <div className="max-w-2xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="p-2 rounded-xl bg-emerald-600 text-white shadow-md shadow-emerald-600/20">
-              <LayoutDashboard className="w-5 h-5" />
+            <div className="w-9 h-9 shrink-0 relative overflow-hidden rounded-xl bg-emerald-600 shadow-md shadow-emerald-600/20">
+              <img src="/logo.png" alt="Logo" className="w-full h-full object-cover" />
             </div>
             <div>
               <h1 className="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-none">

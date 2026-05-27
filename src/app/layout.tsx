@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: "কোরবানির গোশত বিতরণ ট্র্যাকার | Qurbani Meat Distribution Tracker",
   description: "এলাকার পরিবার প্রধানদের মধ্যে কোরবানির গোশত বিতরণের আধুনিক, মোবাইল-ফার্স্ট ও ক্লিন ট্র্যাকিং সিস্টেম",
   keywords: ["Qurbani", "Meat Distribution", "eid-ul-adha", "কোরবানি", "গোশত বিতরণ"],
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export const viewport: Viewport = {
