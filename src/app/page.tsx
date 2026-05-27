@@ -14,12 +14,14 @@ import {
   X,
   Sun,
   Moon,
-  LogOut
+  LogOut,
+  Upload
 } from 'lucide-react';
 import BeneficiaryCard from '@/components/BeneficiaryCard';
 import DistributionModal from '@/components/DistributionModal';
 import BeneficiaryFormModal from '@/components/BeneficiaryFormModal';
 import PinScreen from '@/components/PinScreen';
+import BulkImportModal from '@/components/BulkImportModal';
 
 // Helper function to auto-generate the next sequential token number
 const generateNextToken = (list: any[]): string => {
@@ -50,6 +52,7 @@ export default function Home() {
   // Modals state
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [isDistributeOpen, setIsDistributeOpen] = useState(false);
+  const [isBulkOpen, setIsBulkOpen] = useState(false);
   const [selectedBeneficiary, setSelectedBeneficiary] = useState<any>(null);
   const [defaultToken, setDefaultToken] = useState('');
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
@@ -114,6 +117,11 @@ export default function Home() {
     sessionStorage.removeItem('isAuthenticated');
     setConfirmLogoutOpen(false);
     showToast('সফলভাবে সিস্টেমটি লক করা হয়েছে।', 'info');
+  };
+
+  const handleBulkSuccess = (message: string) => {
+    showToast(message, 'success');
+    fetchBeneficiaries();
   };
 
   // Calculate statistics
@@ -321,6 +329,14 @@ export default function Home() {
           
           <div className="flex items-center gap-2">
             <button
+              onClick={() => setIsBulkOpen(true)}
+              className="p-2.5 rounded-xl border border-border bg-card text-foreground hover:bg-secondary cursor-pointer transition-all flex items-center justify-center shrink-0 shadow-xs"
+              title="বাল্ক ইম্পোর্ট"
+            >
+              <Upload className="w-4.5 h-4.5 text-emerald-600 dark:text-emerald-400" />
+            </button>
+
+            <button
               onClick={toggleTheme}
               className="p-2.5 rounded-xl border border-border bg-card text-foreground hover:bg-secondary cursor-pointer transition-all flex items-center justify-center shrink-0 shadow-xs"
               title={theme === 'light' ? 'ডার্ক মোড' : 'লাইট মোড'}
@@ -503,6 +519,12 @@ export default function Home() {
         defaultToken={defaultToken}
         onClose={() => setIsFormOpen(false)}
         onSave={handleSave}
+      />
+
+      <BulkImportModal
+        isOpen={isBulkOpen}
+        onClose={() => setIsBulkOpen(false)}
+        onSuccess={handleBulkSuccess}
       />
 
       {/* Dynamic Toasts Container Overlay */}
